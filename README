@@ -1,0 +1,41 @@
+==============================
+Ext.ux.grid.column.ProgressBar
+==============================
+
+### Description
+
+A simple column that renders a progress bar in a grid cell.
+The progress bar is imageless and uses canvas to render,
+
+### Usage
+
+Ext.define('Sample.Grid',{
+    
+    extend: 'Ext.grid.Panel',
+    requires: ['Ext.ux.grid.column.ProgressBar'],
+
+    store: Ext.create('Ext.data.Store', {
+        //....
+    }),
+
+    columns: [
+        {header: 'Name', dataIndex: 'name', flex: 1},
+        {
+             xtype: 'progressbarcolumn',
+             dataIndex: 'usage',
+             header: 'Usage',
+             width: 100
+        },
+    ]
+});
+
+### Todo
+
+1. Fallbacks if browser doesn't support canvas, use div instead
+2. More color options
+3. More configurations
+4. By product - standalone progress bar
+
+### Credits
+
+- ExtJS4
